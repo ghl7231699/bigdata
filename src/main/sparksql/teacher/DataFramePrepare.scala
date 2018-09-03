@@ -1,13 +1,9 @@
-package sparksql
+package teacher
 
-import org.apache.spark.sql.SparkSession
 import java.sql.Date
-import org.apache.spark.sql.types.StructType
-import org.apache.spark.sql.types.StructField
-import org.apache.spark.sql.types.StringType
-import org.apache.spark.sql.types.IntegerType
-import org.apache.spark.sql.types.DateType
-import org.apache.spark.sql.Row
+
+import org.apache.spark.sql.{Row, SparkSession}
+import org.apache.spark.sql.types._
 
 /**
  * @author Administrator
