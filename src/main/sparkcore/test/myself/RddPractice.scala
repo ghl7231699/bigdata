@@ -32,6 +32,14 @@ object RddPractice {
     val unit = sc.parallelize(data)
 
     unit.foreach(println)
+
+    val result = unit.aggregate((0, 0))(
+      (total, num) => (total._1 + num, total._2 + 1),
+      ((a, b) => (a._1 + b._1, a._2 + b._2))
+    )
+
+    val d = result._1/result._2.toDouble
+    println("avg is = "+d)
   }
 
   /**

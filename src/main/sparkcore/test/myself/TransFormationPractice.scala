@@ -24,13 +24,13 @@ object TransFormationPractice {
     //
     //    mapPartitions(rDd)
     //
-    //    mapPartitionWithIndex(rDd)
+        mapPartitionWithIndex(rDd)
     //
     //    sample(sc)
     //
     //    union(sc)
 
-    intersection(sc)
+//    intersection(sc)
   }
 
   /**
@@ -110,7 +110,7 @@ object TransFormationPractice {
     */
   def mapPartitionWithIndex(rdd: RDD[String]): Unit = {
     val value = rdd.mapPartitionsWithIndex((index, partition) => {
-      partition.map(line => index + "-->" + line.toLowerCase)
+      partition.map(line => "索引为\t" + index + "-->" + line.toLowerCase)
     })
     value.foreach(println)
 
