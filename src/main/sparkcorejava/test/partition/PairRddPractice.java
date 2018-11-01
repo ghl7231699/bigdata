@@ -28,8 +28,11 @@ public class PairRddPractice {
         JavaRDD<String> rdd = sc.textFile("in/test.csv");
 //        createPairRdd(rdd);
 //        normalToPairRdd(sc);
-        reduceByKey(rdd);
-        combineBy(sc);
+//        reduceByKey(rdd);
+        average(sc);
+        combineByKey(sc);
+
+//        join(sc);
 
         sc.stop();
     }
@@ -146,42 +149,118 @@ public class PairRddPractice {
         });
     }
 
-    private static void combineBy(JavaSparkContext sc) {
+    private static void join(JavaSparkContext sc) {
+        if (sc == null) {
+            return;
+        }
+        JavaRDD<String> rdd1 = sc.textFile("in/test.csv");
+
+        JavaPairRDD<String, String> fire = rdd1.filter(new Function<String, Boolean>() {
+            @Override
+            public Boolean call(String v1) throws Exception {
+                return v1.contains("FIRE");
+            }
+        }).mapToPair(new PairFunction<String, String, String>() {
+            @Override
+            public Tuple2<String, String> call(String s) throws Exception {
+                String[] split = s.split(",");
+                return new Tuple2<String, String>(split[0], split[3]);
+            }
+        });
+
+        JavaPairRDD<String, String> lieutenant = rdd1.filter(new Function<String, Boolean>() {
+            @Override
+            public Boolean call(String v1) throws Exception {
+                return v1.contains("LIEUTENANT");
+            }
+        }).mapToPair(new PairFunction<String, String, String>() {
+            @Override
+            public Tuple2<String, String> call(String s) throws Exception {
+                String[] split = s.split(",");
+                return new Tuple2<String, String>(split[0], split[2]);
+            }
+        });
+
+        fire.join(lieutenant).sortByKey().foreach(new VoidFunction<Tuple2<String, Tuple2<String, String>>>() {
+            @Override
+            public void call(Tuple2<String, Tuple2<String, String>> tuple2) throws Exception {
+                System.out.println(" join result is : " + tuple2);
+            }
+        });
+
+    }
+
+    private static void average(JavaSparkContext sc) {
+        if (sc == null) {
+            return;
+        }
+        List<Tuple2<String, Double>> tuple2s = Arrays.asList(new Tuple2<>("Fred", 88.0), new Tuple2<>("Fred", 95.0), new Tuple2<>("Fred", 91.0),
+                new Tuple2<>("Wilma", 93.0), new Tuple2<>("Wilma", 95.0), new Tuple2<>("Wilma", 98.0));
+
+        //rdd(学生，成绩)
+        JavaPairRDD<String, Double> rdd = sc.parallelizePairs(tuple2s);
+
+        //Function(V,C)（成绩，科目数）
+        //例如 此时返回的是（88.0，1） 成绩是88 科目数为1
+        Function<Double, Tuple2<Double, Integer>> createCombiner = new Function<Double, Tuple2<Double, Integer>>() {
+
+            @Override
+            public Tuple2<Double, Integer> call(Double v1) throws Exception {
+                return new Tuple2<>(v1, 1);
+            }
+        };
+        // //Function2(C,V,C)（成绩，（成绩，科目数））
+        /**
+         * 这里的v1  得到的就是（88.0，1）在同一个分区内 我们又碰到了一个Fred 所以需要将之前的分数+现在的这个分数：v1._1 + v2,科目数量+1 即 v1._2 + 1
+         */
+        Function2<Tuple2<Double, Integer>, Double, Tuple2<Double, Integer>> mergeValue = new Function2<Tuple2<Double, Integer>, Double, Tuple2<Double, Integer>>() {
+
+            @Override
+            public Tuple2<Double, Integer> call(Tuple2<Double, Integer> v1, Double v2) throws Exception {
+                return new Tuple2<Double, Integer>(v1._1 + v2, v1._2 + 1);
+            }
+        };
+        /**
+         * Fred 的数据可能分布在多个分区，因此需要进行合并，及多个分区的同个人的成绩相加：v1._1 + v2._1，科目相加 v1._2 + v2._2
+         */
+        Function2<Tuple2<Double, Integer>, Tuple2<Double, Integer>, Tuple2<Double, Integer>> mergeCombiners = new Function2<Tuple2<Double, Integer>, Tuple2<Double, Integer>, Tuple2<Double, Integer>>() {
+
+            @Override
+            public Tuple2<Double, Integer> call(Tuple2<Double, Integer> v1, Tuple2<Double, Integer> v2) throws Exception {
+                return new Tuple2<>(v1._1 + v2._1, v1._2 + v2._2);
+            }
+        };
+        //聚合处理 (学生,(总分，总科目))
+        rdd.combineByKey(createCombiner, mergeValue, mergeCombiners).map(new Function<Tuple2<String, Tuple2<Double, Integer>>, Tuple2<String, Double>>() {
+            @Override
+            public Tuple2<String, Double> call(Tuple2<String, Tuple2<Double, Integer>> v1) throws Exception {
+                return new Tuple2<String, Double>(v1._1, v1._2._1 / v1._2._2);
+            }
+        }).foreach(new VoidFunction<Tuple2<String, Double>>() {
+            @Override
+            public void call(Tuple2<String, Double> aDouble) throws Exception {
+                System.out.println(aDouble._1 + ":\t" + aDouble._2());
+            }
+        });
+
+    }
+
+    /**
+     * createCombiner: V => C ，这个函数把当前的值作为参数，此时我们可以对其做些附加操作(类型转换)并把它返回 (这一步类似于初始化操作)
+     * mergeValue: (C, V) => C，该函数把元素V合并到之前的元素C(createCombiner)上 (这个操作在每个分区内进行)
+     * mergeCombiners: (C, C) => C，该函数把2个元素C合并 (这个操作在不同分区间进行)
+     * <p>
+     * combineByKey(Function(V,C),Function2(C,V,C),Function2(C,C,C)）
+     *
+     * @param sc
+     */
+    private static void combineByKey(JavaSparkContext sc) {
         if (sc == null) {
             return;
         }
         JavaRDD<String> rdd = sc.textFile("in/student.csv");
-        //个人平均分
-        //1 学生的学科数
-//        rdd.map(new Function<String, Tuple2<String, Integer>>() {
-//            @Override
-//            public Tuple2<String, Integer> call(String v1) throws Exception {
-//                String[] split = v1.split(",");
-//                String replace = split[2].replace(" ", "");
-//                return new Tuple2<String, Integer>(split[0], Integer.valueOf(replace));
-//            }
-//        }).foreach(new VoidFunction<Tuple2<String, Integer>>() {
-//            @Override
-//            public void call(Tuple2<String, Integer> tuple2) throws Exception {
-//                System.out.println(" combineBy:(" + tuple2._1 + ":\t" + tuple2._2 + ")");
-//            }
-//        });
-        //计算出每个学生几科成绩
-//        map.mapToPair(new PairFunction<Tuple2<String, Integer>, String, Integer>() {
-//            @Override
-//            public Tuple2<String, Integer> call(Tuple2<String, Integer> tuple2) throws Exception {
-//                return new Tuple2<String, Integer>(tuple2._1, 1);
-//            }
-//        }).combineByKey(new Function<Integer, Object>() {
-//        });
-//        map.map(new Function<Tuple2<String,Integer>, Integer>() {
-//            @Override
-//            public Integer call(Tuple2<String, Integer> v1) throws Exception {
-//                return v;
-//            }
-//        });
 
-        JavaPairRDD<String, ScoreDetail> pair = rdd.map(new Function<String, ScoreDetail>() {
+        JavaRDD<ScoreDetail> student = rdd.map(new Function<String, ScoreDetail>() {
             @Override
             public ScoreDetail call(String v1) throws Exception {
                 String[] split = v1.split(",");
@@ -191,24 +270,20 @@ public class PairRddPractice {
                 detail.setScore(Integer.valueOf(split[2]));
                 return detail;
             }
-        }).mapToPair(new PairFunction<ScoreDetail, String, ScoreDetail>() {
+        });
+        JavaPairRDD<String, ScoreDetail> pair = student.mapToPair(new PairFunction<ScoreDetail, String, ScoreDetail>() {
             @Override
             public Tuple2<String, ScoreDetail> call(ScoreDetail scoreDetail) throws Exception {
                 return new Tuple2<String, ScoreDetail>(scoreDetail.getName(), scoreDetail);
             }
         });
-//        pair.map(new Function<Tuple2<Float, Integer>, Float>() {
-//            @Override
-//            public Float call(Tuple2<Float, Integer> v1) throws Exception {
-//                return v1._1 / v1._2;
-//            }
-//        }).foreach(new VoidFunction<Float>() {
-//            @Override
-//            public void call(Float aFloat) throws Exception {
-//                System.out.println(" average is :" + aFloat);
-//            }
-//        });
 
+        JavaPairRDD<String, ScoreDetail> subject = student.mapToPair(new PairFunction<ScoreDetail, String, ScoreDetail>() {
+            @Override
+            public Tuple2<String, ScoreDetail> call(ScoreDetail scoreDetail) throws Exception {
+                return new Tuple2<String, ScoreDetail>(scoreDetail.getSubject(), scoreDetail);
+            }
+        });
 
         //1、创建createCombiner：组合器函数，输入参数为RDD[K,V]中的V（即ScoreDetail对象），输出为tuple2(学生成绩，1)
         Function<ScoreDetail, Tuple2<Float, Integer>> createCombiner = new Function<ScoreDetail, Tuple2<Float, Integer>>() {
@@ -241,10 +316,22 @@ public class PairRddPractice {
         res.foreach(new VoidFunction<Tuple2<String, Float>>() {
             @Override
             public void call(Tuple2<String, Float> tuple2) throws Exception {
-                System.out.println(" average:(" + tuple2._1 + ":\t" + tuple2._2 + ")");
+                System.out.println(" student average:(" + tuple2._1 + ":\t" + tuple2._2 + ")");
             }
         });
-
+        subject.combineByKey(createCombiner, mergeValue, mergeCombiners, 2)
+                .mapToPair(new PairFunction<Tuple2<String, Tuple2<Float, Integer>>, String, Float>() {
+                    @Override
+                    public Tuple2<String, Float> call(Tuple2<String, Tuple2<Float, Integer>> tuple2) throws Exception {
+                        return new Tuple2<String, Float>(tuple2._1, tuple2._2._1 / tuple2._2._2);
+                    }
+                })
+                .foreach(new VoidFunction<Tuple2<String, Float>>() {
+                    @Override
+                    public void call(Tuple2<String, Float> tuple2) throws Exception {
+                        System.out.println(" subject average:(" + tuple2._1 + ":\t" + tuple2._2 + ")");
+                    }
+                });
     }
 
     public static class ScoreDetail implements Serializable {
