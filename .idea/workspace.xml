@@ -1,48 +1,280 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3338352-9bfe-4e31-9bfd-d1804f4ddfa6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/sparkcorejava/homework/FlightFilterJava.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/sparkcorejava/test/partition/rdd/PairRddPractice.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/sparkcorejava/test/partition/rdd/RddPracticeJava.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/homework/FlightFilter$$anonfun$executeFlightJob$2.class" afterPath="$PROJECT_DIR$/target/classes/homework/FlightFilter$$anonfun$executeFlightJob$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/homework/FlightFilter$$anonfun$executeFlightJob$3.class" afterPath="$PROJECT_DIR$/target/classes/homework/FlightFilter$$anonfun$executeFlightJob$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/homework/FlightFilter$$anonfun$executeFlightJob$4.class" afterPath="$PROJECT_DIR$/target/classes/homework/FlightFilter$$anonfun$executeFlightJob$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/homework/FlightFilter$$anonfun$executeFlightJob$5.class" afterPath="$PROJECT_DIR$/target/classes/homework/FlightFilter$$anonfun$executeFlightJob$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/homework/FlightFilter$.class" afterPath="$PROJECT_DIR$/target/classes/homework/FlightFilter$.class" />
+    <list default="true" id="c7278777-2275-44b5-874c-2d6bd9e188ff" name="Default" comment="rdd action">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/AirlineFlightUtils$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/AirlineFlightUtils$AirlineFlightPartitioner$$anonfun$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/AirlineFlightUtils$AirlineFlightPartitioner.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/AirlineFlightUtils$DelayedFlight$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/AirlineFlightUtils$DelayedFlight.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/AirlineFlightUtils$FlightKey$$anonfun$orderingByIdAirportIdDelay$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/AirlineFlightUtils$FlightKey$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/AirlineFlightUtils$FlightKey.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/AirlineFlightUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/SecondarySortDriver$$anonfun$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/SecondarySortDriver$$anonfun$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/SecondarySortDriver$$anonfun$3$$anonfun$apply$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/SecondarySortDriver$$anonfun$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/SecondarySortDriver$$anonfun$4$$anonfun$apply$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/SecondarySortDriver$$anonfun$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/SecondarySortDriver$$anonfun$main$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/SecondarySortDriver$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/SecondarySortDriver.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/Constants$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/Constants.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/EmployeeFilter$$anonfun$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/EmployeeFilter$$anonfun$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/EmployeeFilter$$anonfun$3$$anonfun$apply$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/EmployeeFilter$$anonfun$3$$anonfun$apply$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/EmployeeFilter$$anonfun$3$$anonfun$apply$5.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/EmployeeFilter$$anonfun$3$$anonfun$apply$6.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/EmployeeFilter$$anonfun$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/EmployeeFilter$$anonfun$executeEmployeeJob$1$$anonfun$apply$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/EmployeeFilter$$anonfun$executeEmployeeJob$1$$anonfun$apply$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/EmployeeFilter$$anonfun$executeEmployeeJob$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/EmployeeFilter$$anonfun$executeEmployeeJob$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/EmployeeFilter$$anonfun$executeEmployeeJob$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/EmployeeFilter$$anonfun$executeEmployeeJob$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/EmployeeFilter$$anonfun$insert$1$$anonfun$apply$7.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/EmployeeFilter$$anonfun$insert$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/EmployeeFilter$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/EmployeeFilter$flight$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/EmployeeFilter$flight.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/EmployeeFilter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/FlightFilter$$anonfun$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/FlightFilter$$anonfun$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/FlightFilter$$anonfun$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/FlightFilter$$anonfun$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/FlightFilter$$anonfun$5.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/FlightFilter$$anonfun$6.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/FlightFilter$$anonfun$executeFlightJob$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/FlightFilter$$anonfun$executeFlightJob$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/FlightFilter$$anonfun$executeFlightJob$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/FlightFilter$$anonfun$executeFlightJob$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/FlightFilter$$anonfun$executeFlightJob$5.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/FlightFilter$$anonfun$insert$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/FlightFilter$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/FlightFilter$flight$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/FlightFilter$flight.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/FlightFilter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/RDDtoMysql$$anonfun$insert$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/RDDtoMysql$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/RDDtoMysql$flight$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/RDDtoMysql$flight.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/homework/RDDtoMysql.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/LearnSparkHDFS$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/LearnSparkHDFS.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/LearnSparkKafka$$anonfun$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/LearnSparkKafka$$anonfun$main$1$$anonfun$apply$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/LearnSparkKafka$$anonfun$main$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/LearnSparkKafka$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/LearnSparkKafka.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/LearnSparkMySql$$anonfun$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/LearnSparkMySql$$anonfun$main$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/LearnSparkMySql$$anonfun$main$2$$anonfun$apply$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/LearnSparkMySql$$anonfun$main$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/LearnSparkMySql$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/LearnSparkMySql.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnCombineByKey$$anonfun$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnCombineByKey$$anonfun$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnCombineByKey$$anonfun$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnCombineByKey$$anonfun$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnCombineByKey$$anonfun$5.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnCombineByKey$$anonfun$main$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnCombineByKey$$anonfun$main$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnCombineByKey$$anonfun$main$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnCombineByKey$$anonfun$main$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnCombineByKey$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnCombineByKey$ScoreDetail$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnCombineByKey$ScoreDetail.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnCombineByKey.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnCountByValue$$anonfun$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnCountByValue$$anonfun$main$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnCountByValue$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnCountByValue.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnFilter$$anonfun$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnFilter$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnFilter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnMapPartitions$$anonfun$1$$anonfun$apply$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnMapPartitions$$anonfun$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnMapPartitions$$anonfun$2$$anonfun$apply$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnMapPartitions$$anonfun$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnMapPartitions$$anonfun$main$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnMapPartitions$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnMapPartitions.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnTextFile$$anonfun$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnTextFile$$anonfun$main$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnTextFile$$anonfun$main$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnTextFile$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/learnTextFile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/partition/CustomPartition.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/partition/LearnPartitionScala$$anonfun$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/partition/LearnPartitionScala$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/partition/LearnPartitionScala.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/partition/LearnRDDPartition$$anonfun$main$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/partition/LearnRDDPartition$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/partition/LearnRDDPartition.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/partition/LearnRDDPartition2$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/partition/LearnRDDPartition2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/partition/LearnRDDPartition3$$anonfun$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/partition/LearnRDDPartition3$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/sparkcore/partition/LearnRDDPartition3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/teacher/DataFramePrepare$$typecreator2$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/teacher/DataFramePrepare$$typecreator4$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/teacher/DataFramePrepare$$typecreator6$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/teacher/DataFramePrepare$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/teacher/DataFramePrepare$Person$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/teacher/DataFramePrepare$Person.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/teacher/DataFramePrepare.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/Animal.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/BaseScala$$anonfun$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/BaseScala$$anonfun$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/BaseScala$$anonfun$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/BaseScala$$anonfun$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/BaseScala$$anonfun$5.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/BaseScala$$anonfun$list$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/BaseScala$$anonfun$map$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/BaseScala$$anonfun$multiString$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/BaseScala$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/BaseScala.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/Cat$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/Cat.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/DataFrameTest$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/DataFrameTest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/Dog$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/Dog.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/Human$class.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/Human.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/HumanJava.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/Man$$anonfun$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/Man$$anonfun$breaks$1$$anonfun$apply$mcV$sp$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/Man$$anonfun$breaks$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/Man$$anonfun$breaks$2$$anonfun$apply$mcV$sp$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/Man$$anonfun$breaks$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/Man$$anonfun$continue$1$$anonfun$apply$mcVI$sp$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/Man$$anonfun$continue$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/Man$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/Man.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/Person.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/Student.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/Test$Test$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/Test.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/TryCatch$$anonfun$main$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/TryCatch$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/TryCatch.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/ActionPractice$$anonfun$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/ActionPractice$$anonfun$countByValue$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/ActionPractice$$anonfun$countByValue$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/ActionPractice$$anonfun$first$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/ActionPractice$$anonfun$foreachFunction$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/ActionPractice$$anonfun$foreachFunction$2$$anonfun$apply$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/ActionPractice$$anonfun$foreachFunction$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/ActionPractice$$anonfun$take$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/ActionPractice$$anonfun$takeOrdered$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/ActionPractice$$anonfun$takeOrdered$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/ActionPractice$$anonfun$top$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/ActionPractice$$anonfun$top$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/ActionPractice$$anonfun$top$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/ActionPractice$$anonfun$top$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/ActionPractice$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/ActionPractice.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddFromTupleList$$anonfun$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddFromTupleList$$anonfun$main$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddFromTupleList$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddFromTupleList.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$$anonfun$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$$anonfun$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$$anonfun$combineBy$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$$anonfun$combineBy$10.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$$anonfun$combineBy$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$$anonfun$combineBy$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$$anonfun$combineBy$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$$anonfun$combineBy$5.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$$anonfun$combineBy$6.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$$anonfun$combineBy$7.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$$anonfun$combineBy$8.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$$anonfun$combineBy$9.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$$anonfun$join$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$$anonfun$main$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$$anonfun$main$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$$anonfun$main$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$$anonfun$main$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$$anonfun$main$5.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$$anonfun$main$6.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$$anonfun$partitions$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$$anonfun$reduceByKey$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$$anonfun$reduceByKey$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$$anonfun$reduceByKey$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$$anonfun$reduceByKey$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$$anonfun$sortKey$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$ScoreDetail$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice$ScoreDetail.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PairRddPractice.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PartitionPractice$$anonfun$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PartitionPractice$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/PartitionPractice.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/RddPractice$$anonfun$createRdd$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/RddPractice$$anonfun$createRdd$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/RddPractice$$anonfun$createRdd$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/RddPractice$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/RddPractice.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/TransFormationPractice$$anonfun$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/TransFormationPractice$$anonfun$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/TransFormationPractice$$anonfun$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/TransFormationPractice$$anonfun$4$$anonfun$apply$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/TransFormationPractice$$anonfun$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/TransFormationPractice$$anonfun$distinct$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/TransFormationPractice$$anonfun$filter$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/TransFormationPractice$$anonfun$flatMap$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/TransFormationPractice$$anonfun$intersection$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/TransFormationPractice$$anonfun$map$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/TransFormationPractice$$anonfun$mapPartitionWithIndex$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/TransFormationPractice$$anonfun$mapPartitionWithIndex$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/TransFormationPractice$$anonfun$mapPartitions$1$$anonfun$apply$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/TransFormationPractice$$anonfun$mapPartitions$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/TransFormationPractice$$anonfun$mapPartitions$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/TransFormationPractice$$anonfun$sample$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/TransFormationPractice$$anonfun$sample$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/TransFormationPractice$$anonfun$union$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/TransFormationPractice$.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/myself/TransFormationPractice.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/partition/RddPracticeJava.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/teacher/CustomEmployeePartitioner.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/teacher/Employee_Key.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/teacher/Employee_Value.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/teacher/SecondarySortDriver2$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/teacher/SecondarySortDriver2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/utils/HdfsUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/utils/JdbcUtils.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/in/student.csv" afterPath="$PROJECT_DIR$/in/student.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/sparkcore/homework/FlightFilter.scala" afterPath="$PROJECT_DIR$/src/main/sparkcore/homework/FlightFilter.scala" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <ignored path="$PROJECT_DIR$/target/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" show_ignored="true" />
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_TABLE_DETAILS" value="true" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <expand />
-    <select />
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="RDDtoMysql.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RDDtoMysql.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/sparkcore/homework/RDDtoMysql.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
               <caret line="7" column="7" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RddPartitionJava.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/sparkcorejava/test/partition/RddPartitionJava.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="12" column="110" lean-forward="false" selection-start-line="12" selection-start-column="110" selection-end-line="12" selection-end-column="110" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -60,18 +292,8 @@
       <file leaf-file-name="LearnRDDPartition.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/sparkcore/test/partition/LearnRDDPartition.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Constants.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/sparkcore/homework/Constants.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+            <state relative-caret-position="209">
+              <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -100,8 +322,8 @@
       <file leaf-file-name="FlightFilterJava.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/sparkcorejava/homework/FlightFilterJava.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="82" column="72" lean-forward="false" selection-start-line="82" selection-start-column="72" selection-end-line="82" selection-end-column="72" />
+            <state relative-caret-position="-1090">
+              <caret line="22" column="68" lean-forward="false" selection-start-line="22" selection-start-column="68" selection-end-line="22" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -109,114 +331,47 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="JavaActionPractice.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/sparkcorejava/test/rdd/JavaActionPractice.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="388">
+              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PairRddPractice.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/sparkcorejava/test/rdd/PairRddPractice.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RddPracticeJava.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/sparkcorejava/test/rdd/RddPracticeJava.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>NUTRITION</find>
-      <find>deleteFile</find>
-      <find>bigdata-1.0-jar-with-dependencies.jar</find>
-      <find>persons</find>
-      <find>mapPartitionWith</find>
-      <find>mapPartitionWithIndex</find>
-      <find>mapPartitions</find>
-      <find>sample</find>
-      <find>union</find>
-      <find>filter</find>
-      <find>F</find>
-      <find>CombineByKey</find>
-      <find>ScoreDetail</find>
-      <find>flatMap</find>
-      <find>combineBy</find>
-      <find>normalToPairRdd</find>
-      <find>LIEUTENANT</find>
-      <find>reduceByKey</find>
-      <find>50</find>
-      <find>reduce</find>
-      <find>河北航空</find>
-      <find>top</find>
-      <find>CA1276</find>
-    </findStrings>
-    <replaceStrings>
-      <replace />
-      <replace>males</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="PUSH_TAGS">
-      <GitPushTagMode>
-        <option name="argument" value="--follow-tags" />
-        <option name="title" value="Current Branch" />
-      </GitPushTagMode>
-    </option>
-  </component>
-  <component name="GradleLocalSettings">
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/sparkcore/utils/scriptFile.scala" />
-        <option value="$PROJECT_DIR$/src/main/sparkcore/utils/JdbcUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/sparkcore/test/LearnSparkMySql.scala" />
-        <option value="$PROJECT_DIR$/src/main/sparkcore/homework/EmployeeFilter.scala" />
-        <option value="$PROJECT_DIR$/src/main/sparkcore/homework/Constants.scala" />
-        <option value="$PROJECT_DIR$/src/main/sparkcore/test/LearnSparkKafka.scala" />
-        <option value="$PROJECT_DIR$/in/国内航班数据说明.txt" />
-        <option value="$PROJECT_DIR$/src/main/sparkcore/test/learnMapPartitions.scala" />
-        <option value="$PROJECT_DIR$/src/main/sparkcore/test/TransFormationPractice.scala" />
-        <option value="$PROJECT_DIR$/src/main/sparkcore/test/learnCombineByKey.scala" />
-        <option value="$PROJECT_DIR$/src/main/sparkcore/test/PairRddPractice.scala" />
-        <option value="$PROJECT_DIR$/src/main/sparkcore/test/ActionPractice.scala" />
-        <option value="$PROJECT_DIR$/src/main/sparkcore/test/myself/ActionPractice.scala" />
-        <option value="$PROJECT_DIR$/src/main/sparkcore/test/myself/PairRddPractice.scala" />
-        <option value="$PROJECT_DIR$/src/main/sparkcore/test/myself/PartitionPractice.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/BaseScala.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/test/Student.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/test/Animal.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/test/BaseScala.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/test/Constant.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/test/Dog.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/test/Human.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/test/Test.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/test/TryCatch.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/test/Man.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/test/HumanJava.java" />
-        <option value="$PROJECT_DIR$/src/main/sparkcore/test/teacher/CustomEmployeePartitioner.java" />
-        <option value="$PROJECT_DIR$/src/main/sparkcore/test/teacher/Employee_Value.java" />
-        <option value="$PROJECT_DIR$/src/main/sparkcore/test/teacher/Employee_Key.java" />
-        <option value="$PROJECT_DIR$/src/main/sparkcore/test/teacher/SecondarySortDriver2.java" />
-        <option value="$PROJECT_DIR$/src/main/sparksql/teacher/DataFramePrepare.scala" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/scala/test/Person.scala" />
-        <option value="$PROJECT_DIR$/src/main/sparksqljava/test/Person.java" />
-        <option value="$PROJECT_DIR$/src/main/sparksqljava/test/Male.java" />
-        <option value="$PROJECT_DIR$/src/main/sparksqljava/test/DataFrameTestJava.java" />
-        <option value="$PROJECT_DIR$/src/main/sparksql/test/DataFrameTest.scala" />
-        <option value="$PROJECT_DIR$/src/main/sparkcore/test/partition/LearnRDDPartition.scala" />
-        <option value="$PROJECT_DIR$/src/main/sparkcore/test/myself/RddPartitionPractice.scala" />
-        <option value="$PROJECT_DIR$/src/main/sparkcore/test/myself/RddPractice.scala" />
-        <option value="$PROJECT_DIR$/src/main/sparkcore/test/myself/TransFormationPractice.scala" />
-        <option value="$PROJECT_DIR$/src/main/sparkcorejava/test/partition/RddPracticeJava.java" />
-        <option value="$PROJECT_DIR$/src/main/sparkcorejava/test/partition/PairRddPractice.java" />
-        <option value="$PROJECT_DIR$/src/main/sparkcore/homework/FlightFilter.scala" />
-        <option value="$PROJECT_DIR$/src/main/sparkcorejava/homework/FlightFilterJava.java" />
-        <option value="$PROJECT_DIR$/src/main/sparkcorejava/test/partition/JavaActionPractice.java" />
-        <option value="$PROJECT_DIR$/in/student.csv" />
-        <option value="$PROJECT_DIR$/src/main/sparkcorejava/test/partition/rdd/JavaActionPractice.java" />
-        <option value="$PROJECT_DIR$/src/main/sparkcorejava/test/partition/rdd/PairRddPractice.java" />
-        <option value="$PROJECT_DIR$/src/main/sparkcorejava/test/partition/rdd/RddPracticeJava.java" />
+        <option value="$PROJECT_DIR$/src/main/sparkcorejava/test/partition/RddPartitionJava.java" />
       </list>
     </option>
   </component>
@@ -225,61 +380,6 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="bigdata" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="bigdata" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
-      </expand>
-      <select />
-    </treeState>
-  </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="1680" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-          <State>
-            <id>Android &gt; Lint &gt; Security</id>
-          </State>
-          <State>
-            <id>Android Lint for Kotlin</id>
-          </State>
-          <State>
-            <id>Java</id>
-          </State>
-          <State>
-            <id>Naming conventionsJava</id>
-          </State>
-          <State>
-            <id>Spring</id>
-          </State>
-          <State>
-            <id>Spring SecuritySpring</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>Android</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -324,14 +424,14 @@
               <item name="bigdata" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="sparkcore" type="462c0819:PsiDirectoryNode" />
+              <item name="sparkcorejava" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bigdata" type="b2602c69:ProjectViewProjectNode" />
               <item name="bigdata" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="sparkcore" type="462c0819:PsiDirectoryNode" />
+              <item name="sparkcorejava" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -339,7 +439,7 @@
               <item name="bigdata" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="sparkcore" type="462c0819:PsiDirectoryNode" />
+              <item name="sparkcorejava" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="partition" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -349,31 +449,20 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="sparkcorejava" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="rdd" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bigdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bigdata" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
     </panes>
-  </component>
-  <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.34878048" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/sparkcore" />
-    <property name="extract.method.default.visibility" value="private" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="test" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/in" />
-      <recent name="$PROJECT_DIR$/src/main" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -387,91 +476,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.JavaActionPractice">
-    <configuration name="FlightFilter" type="Application" factoryName="Application" temporary="true">
+  <component name="RunManager" selected="Application.RddPartitionJava">
+    <configuration name="RddPartitionJava" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="homework.*" />
+          <option name="PATTERN" value="test.partition.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="homework.FlightFilter" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="bigdata" />
-      <envs />
-    </configuration>
-    <configuration name="FlightFilterJava" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="homework.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="homework.FlightFilterJava" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="bigdata" />
-      <envs />
-    </configuration>
-    <configuration name="JavaActionPractice" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="test.partition.rdd.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="test.partition.rdd.JavaActionPractice" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="bigdata" />
-      <envs />
-    </configuration>
-    <configuration name="PairRddPractice" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="test.partition.rdd.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="test.partition.rdd.PairRddPractice" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="bigdata" />
-      <envs />
-    </configuration>
-    <configuration name="RddPracticeJava" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="test.partition.rdd.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="test.partition.rdd.RddPracticeJava" />
+      <option name="MAIN_CLASS_NAME" value="test.partition.RddPartitionJava" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -564,154 +577,28 @@
       <properties />
       <listeners />
     </configuration>
-    <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.RddPracticeJava" />
-      <item index="1" class="java.lang.String" itemvalue="Application.PairRddPractice" />
-      <item index="2" class="java.lang.String" itemvalue="Application.JavaActionPractice" />
-      <item index="3" class="java.lang.String" itemvalue="Application.FlightFilterJava" />
-      <item index="4" class="java.lang.String" itemvalue="Application.FlightFilter" />
-    </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.JavaActionPractice" />
-        <item index="1" class="java.lang.String" itemvalue="Application.FlightFilterJava" />
-        <item index="2" class="java.lang.String" itemvalue="Application.FlightFilter" />
-        <item index="3" class="java.lang.String" itemvalue="Application.PairRddPractice" />
-        <item index="4" class="java.lang.String" itemvalue="Application.RddPracticeJava" />
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application.RddPartitionJava" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SbtLocalSettings">
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="a3338352-9bfe-4e31-9bfd-d1804f4ddfa6" name="Default" comment="" />
-      <created>1534841464553</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1534841464553</updated>
-      <workItem from="1534841466016" duration="5965000" />
-      <workItem from="1534903381873" duration="8048000" />
-      <workItem from="1534924724303" duration="13202000" />
-      <workItem from="1535007642594" duration="12377000" />
-      <workItem from="1535078689530" duration="132000" />
-      <workItem from="1535361069159" duration="66000" />
-      <workItem from="1535448069544" duration="2869000" />
-      <workItem from="1535509470981" duration="8907000" />
-      <workItem from="1535595192721" duration="10850000" />
-      <workItem from="1535682248309" duration="7315000" />
-      <workItem from="1535767461053" duration="10804000" />
-      <workItem from="1535941195182" duration="11810000" />
-      <workItem from="1535972284962" duration="159000" />
-      <workItem from="1536199195119" duration="4239000" />
-      <workItem from="1539053384685" duration="3782000" />
-      <workItem from="1540734852010" duration="821000" />
-      <workItem from="1540810889557" duration="2254000" />
-      <workItem from="1540865610346" duration="9755000" />
-      <workItem from="1540967313288" duration="10390000" />
-      <workItem from="1541052841533" duration="12035000" />
-      <workItem from="1541125732272" duration="13082000" />
-    </task>
-    <task id="LOCAL-00001" summary="添加mysql jdbc 驱动依赖及spark计算结果写入mysql">
-      <created>1534929937657</created>
+    <task id="LOCAL-00001" summary="rdd action">
+      <created>1541151378199</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1534929937657</updated>
+      <updated>1541151378199</updated>
     </task>
-    <task id="LOCAL-00002" summary="作业2排名并导入mysql">
-      <created>1534941307663</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1534941307663</updated>
-    </task>
-    <task id="LOCAL-00003" summary="transformation 联系">
-      <created>1535026999077</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1535026999078</updated>
-    </task>
-    <task id="LOCAL-00004" summary="action 练习">
-      <created>1535623566316</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1535623566317</updated>
-    </task>
-    <task id="LOCAL-00005" summary="scala基础语法">
-      <created>1535965386673</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1535965386673</updated>
-    </task>
-    <task id="LOCAL-00006" summary="删除本地打包jar上传">
-      <created>1535966250715</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1535966250715</updated>
-    </task>
-    <task id="LOCAL-00007" summary="bigdata test">
-      <created>1535967082228</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1535967082228</updated>
-    </task>
-    <task id="LOCAL-00008" summary="add gitignore">
-      <created>1535972428075</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1535972428075</updated>
-    </task>
-    <task id="LOCAL-00009" summary="sparksql dataframe create">
-      <created>1536203495916</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1536203495916</updated>
-    </task>
-    <task id="LOCAL-00010" summary="rdd java 版本练习">
-      <created>1540984745041</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1540984745041</updated>
-    </task>
-    <task id="LOCAL-00011" summary="PairRdd combineByKey java">
-      <created>1541073261566</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1541073261567</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148862000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+    <option name="totallyTimeSpent" value="255000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1680" y="0" width="1920" height="1080" extended-state="0" />
@@ -778,28 +665,9 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="UnknownFeatures">
-    <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="添加mysql jdbc 驱动依赖及spark计算结果写入mysql" />
-    <MESSAGE value="作业2排名并导入mysql" />
-    <MESSAGE value="transformation 联系" />
-    <MESSAGE value="action 练习" />
-    <MESSAGE value="scala基础语法" />
-    <MESSAGE value="删除本地打包jar上传" />
-    <MESSAGE value="bigdata test" />
-    <MESSAGE value="add gitignore" />
-    <MESSAGE value="sparksql dataframe create" />
-    <MESSAGE value="rdd java 版本练习" />
-    <MESSAGE value="PairRdd combineByKey java" />
-    <option name="LAST_COMMIT_MESSAGE" value="PairRdd combineByKey java" />
+    <MESSAGE value="rdd action" />
+    <option name="LAST_COMMIT_MESSAGE" value="rdd action" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -816,41 +684,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/scala/test/Person.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-sql_2.11/2.1.3/spark-sql_2.11-2.1.3-sources.jar!/org/apache/spark/sql/Dataset.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="422" column="6" lean-forward="false" selection-start-line="422" selection-start-column="6" selection-end-line="422" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/sparksql/test/DataFrameTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="37" column="8" lean-forward="true" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/in/people.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/sparksqljava/test/DataFrameTestJava.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/sparksqljava/test/Male.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -1130,52 +963,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/sparkcore/test/LearnSparkHDFS.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="7" lean-forward="false" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/sparkcore/test/LearnSparkMySql.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="11" column="7" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/sparkcorejava/homework/FlightFilterJava.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="82" column="72" lean-forward="false" selection-start-line="82" selection-start-column="72" selection-end-line="82" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/sparkcore/homework/RDDtoMysql.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="7" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/sparkcore/test/partition/CustomPartition.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="13" column="3" lean-forward="false" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/sparkcore/test/partition/LearnRDDPartition.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1204,82 +995,91 @@
         </state>
       </provider>
     </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>scala-sdk-2.11.6</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>bigdata</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.34878048" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>scala-sdk-2.11.6</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.34878048" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/sparkcore/homework/RDDtoMysql.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="7" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/sparkcorejava/homework/FlightFilterJava.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1090">
+          <caret line="22" column="68" lean-forward="false" selection-start-line="22" selection-start-column="68" selection-end-line="22" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/sparkcorejava/test/rdd/RddPracticeJava.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/sparkcorejava/test/rdd/PairRddPractice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/sparkcore/test/partition/LearnRDDPartition.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/sparkcore/test/LearnSparkHDFS.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="7" lean-forward="false" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/sparkcore/test/LearnSparkMySql.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="11" column="7" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/sparkcorejava/test/partition/RddPartitionJava.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="110" lean-forward="false" selection-start-line="12" selection-start-column="110" selection-end-line="12" selection-end-column="110" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/sparkcorejava/test/rdd/JavaActionPractice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
