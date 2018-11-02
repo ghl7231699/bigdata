@@ -8,3 +8,4 @@ src/main/resources/
 src/test/
 target
 src/main/sparksqljava/teacher/
+/.idea/workspace.xml
