@@ -1,4 +1,4 @@
-package test.partition;
+package test.rdd;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
@@ -28,9 +28,9 @@ public class PairRddPractice {
         JavaRDD<String> rdd = sc.textFile("in/test.csv");
 //        createPairRdd(rdd);
 //        normalToPairRdd(sc);
-//        reduceByKey(rdd);
-        average(sc);
-        combineByKey(sc);
+        reduceByKey(rdd);
+//        average(sc);
+//        combineByKey(sc);
 
 //        join(sc);
 
@@ -141,17 +141,18 @@ public class PairRddPractice {
             public Integer call(Integer v1, Integer v2) throws Exception {
                 return v1 + v2;
             }
-        }).foreach(new VoidFunction<Tuple2<String, Integer>>() {
-            @Override
-            public void call(Tuple2<String, Integer> tuple2) throws Exception {
-                System.out.println(" reduceByKey:(" + tuple2._1 + ":\t" + tuple2._2 + ")");
-            }
-        });
+        }).sortByKey()
+                .foreach(new VoidFunction<Tuple2<String, Integer>>() {
+                    @Override
+                    public void call(Tuple2<String, Integer> tuple2) throws Exception {
+                        System.out.println(" reduceByKey:(" + tuple2._1 + ":\t" + tuple2._2 + ")");
+                    }
+                });
     }
 
-    private static void join(JavaSparkContext sc) {
+    public static JavaPairRDD<String, Tuple2<String, String>> join(JavaSparkContext sc) {
         if (sc == null) {
-            return;
+            return null;
         }
         JavaRDD<String> rdd1 = sc.textFile("in/test.csv");
 
@@ -181,13 +182,14 @@ public class PairRddPractice {
             }
         });
 
-        fire.join(lieutenant).sortByKey().foreach(new VoidFunction<Tuple2<String, Tuple2<String, String>>>() {
-            @Override
-            public void call(Tuple2<String, Tuple2<String, String>> tuple2) throws Exception {
-                System.out.println(" join result is : " + tuple2);
-            }
-        });
-
+        JavaPairRDD<String, Tuple2<String, String>> join = fire.join(lieutenant);
+//        join.sortByKey().foreach(new VoidFunction<Tuple2<String, Tuple2<String, String>>>() {
+//            @Override
+//            public void call(Tuple2<String, Tuple2<String, String>> tuple2) throws Exception {
+//                System.out.println(" join result is : " + tuple2);
+//            }
+//        });
+        return join;
     }
 
     private static void average(JavaSparkContext sc) {

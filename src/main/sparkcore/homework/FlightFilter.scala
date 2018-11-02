@@ -37,7 +37,7 @@ object FlightFilter {
       .sortByKey(ascending = false)
       .top(6)
       .map(x => (x._2, x._1))
-
+      value.foreach(println)
 //    value.foreachPartition(insert)
 
     //    upload(value, "hdfs://ghl01:8020/user/ghl/ranking")
