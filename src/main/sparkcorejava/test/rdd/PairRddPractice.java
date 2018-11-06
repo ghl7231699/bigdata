@@ -28,7 +28,7 @@ public class PairRddPractice {
         JavaRDD<String> rdd = sc.textFile("in/test.csv");
 //        createPairRdd(rdd);
 //        normalToPairRdd(sc);
-        reduceByKey(rdd);
+//        reduceByKey(rdd);
 //        average(sc);
 //        combineByKey(sc);
 

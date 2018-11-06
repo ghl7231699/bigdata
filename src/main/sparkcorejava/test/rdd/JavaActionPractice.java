@@ -23,9 +23,11 @@ public class JavaActionPractice {
         SparkConf conf = new SparkConf().setAppName(JavaActionPractice.class.getSimpleName()).setMaster("local");
         JavaSparkContext sc = new JavaSparkContext(conf);
         sc.setLogLevel("ERROR");
-        JavaRDD<String> file = sc.textFile("in/student.csv");
+//        JavaRDD<String> file = sc.textFile("in/student.csv");
+//        JavaRDD<String> file = sc.textFile("hdfs://aliyun:8020/user/input");
+        JavaRDD<String> file = sc.textFile("hdfs://aliyun:8020/user/test1/");
 
-//        count(file);
+        count(file);
 //
 //        take(file);
 
@@ -37,10 +39,13 @@ public class JavaActionPractice {
 
 //        collect(sc);
 
-        groupBy(file);
+//        groupBy(file);
     }
 
     private static void count(JavaRDD<String> file) {
+        if (file == null) {
+            return;
+        }
         System.out.println("count : \t" + file.count());
     }
 
