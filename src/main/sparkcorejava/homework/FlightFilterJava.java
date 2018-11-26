@@ -26,7 +26,8 @@ public class FlightFilterJava {
         JavaRDD<String> file = sc.textFile("in/国内航班数据500条.csv");
 
 //        maxAirPlane2(file);
-        cityToCity(file, "北京", "重庆");
+        maxAirPlane3(file);
+//        cityToCity(file, "北京", "重庆");
     }
 
     /**
@@ -115,6 +116,55 @@ public class FlightFilterJava {
             Tuple2<Integer, String> tuple2 = take.get(i);
             System.out.println("航班数最多的航空公司：" + (i + 1) + "：" + tuple2);
         }
+    }
+
+    private static void maxAirPlane3(JavaRDD<String> rdd) {
+        if (rdd == null) {
+            return;
+        }
+        //1、生成（航空公司+航班号，数量）去除重复数据
+        JavaPairRDD<String, Integer> pair = rdd.mapToPair(new PairFunction<String, String, Integer>() {
+            @Override
+            public Tuple2<String, Integer> call(String s) throws Exception {
+                if ("".equals(s)) {
+                    return null;
+                }
+                String[] split = s.split(",");
+                return new Tuple2<>((split[7] + "," + split[8]), 1);
+            }
+        });
+        //2、（航空公司+航班号，数量)相同key值合并
+        JavaPairRDD<String, Integer> reduce = pair.reduceByKey(new Function2<Integer, Integer, Integer>() {
+            @Override
+            public Integer call(Integer v1, Integer v2) throws Exception {
+                return v1 + v2;
+            }
+        });
+
+        reduce.mapToPair(new PairFunction<Tuple2<String, Integer>, String, Integer>() {
+            @Override
+            public Tuple2<String, Integer> call(Tuple2<String, Integer> tuple2) throws Exception {
+                return new Tuple2<>(tuple2._1.split(",")[1], 1);
+            }
+        }).reduceByKey(new Function2<Integer, Integer, Integer>() {
+            @Override
+            public Integer call(Integer v1, Integer v2) throws Exception {
+                return v1 + v2;
+            }
+        }).mapToPair(new PairFunction<Tuple2<String, Integer>, Integer, String>() {
+            @Override
+            public Tuple2<Integer, String> call(Tuple2<String, Integer> tuple2) throws Exception {
+                return new Tuple2<>(tuple2._2, tuple2._1);
+            }
+        }).sortByKey(false)
+                .foreach(new VoidFunction<Tuple2<Integer, String>>() {
+                    @Override
+                    public void call(Tuple2<Integer, String> tuple2) throws Exception {
+                        System.out.println(tuple2._2 + ":" + tuple2._1);
+                    }
+                });
+
+
     }
 
     /**

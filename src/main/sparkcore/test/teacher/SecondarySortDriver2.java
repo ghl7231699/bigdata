@@ -30,7 +30,7 @@ public class SecondarySortDriver2 {
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("pattern").setMaster("local");
         JavaSparkContext jsc = new JavaSparkContext(conf);
-        JavaRDD<String> rdd = jsc.textFile("employee.csv");
+        JavaRDD<String> rdd = jsc.textFile("in/employee.csv");
         jsc.setLogLevel("ERROR");
         JavaPairRDD<Employee_Key, Employee_Value> pair = rdd.mapToPair(new PairFunction<String, Employee_Key, Employee_Value>() {
             @Override

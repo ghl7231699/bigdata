@@ -25,12 +25,14 @@ public class PairRddPractice {
 
 //        createPairRdd(sc);
 //
-        JavaRDD<String> rdd = sc.textFile("in/test.csv");
+//        JavaRDD<String> rdd = sc.textFile("in/test.csv");
+        JavaRDD<String> rdd = sc.textFile("in/student.csv");
 //        createPairRdd(rdd);
 //        normalToPairRdd(sc);
 //        reduceByKey(rdd);
 //        average(sc);
 //        combineByKey(sc);
+        averageScore(rdd);
 
 //        join(sc);
 
@@ -148,6 +150,41 @@ public class PairRddPractice {
                         System.out.println(" reduceByKey:(" + tuple2._1 + ":\t" + tuple2._2 + ")");
                     }
                 });
+    }
+
+    private static void averageScore(JavaRDD<String> rdd) {
+        if (rdd == null) {
+            return;
+        }
+
+        JavaPairRDD<String, ScoreDetail> pair = rdd.map(new Function<String, ScoreDetail>() {
+            @Override
+            public ScoreDetail call(String v1) throws Exception {
+                String[] split = v1.split(",");
+                ScoreDetail detail = new ScoreDetail();
+                detail.setName(split[0]);
+                detail.setSubject(split[1]);
+                detail.setScore(Integer.valueOf(split[2]));
+                return detail;
+            }
+        }).mapToPair(new PairFunction<ScoreDetail, String, ScoreDetail>() {
+            @Override
+            public Tuple2<String, ScoreDetail> call(ScoreDetail scoreDetail) throws Exception {
+                return new Tuple2<String, ScoreDetail>(scoreDetail.getName(), scoreDetail);
+            }
+        });
+        JavaPairRDD<String, ScoreDetail> reduce = pair.reduceByKey(new Function2<ScoreDetail, ScoreDetail, ScoreDetail>() {
+            @Override
+            public ScoreDetail call(ScoreDetail v1, ScoreDetail v2) throws Exception {
+                return new ScoreDetail(v1.getName(), v1.getSubject() + "," + v2.getSubject(), v1.getScore() + v2.getScore());
+            }
+        });
+        reduce.foreach(new VoidFunction<Tuple2<String, ScoreDetail>>() {
+            @Override
+            public void call(Tuple2<String, ScoreDetail> t) throws Exception {
+                System.out.println(t._1 + ": " + t._2.getScore() / t._2.getSubject().split(",").length);
+            }
+        });
     }
 
     public static JavaPairRDD<String, Tuple2<String, String>> join(JavaSparkContext sc) {
@@ -372,6 +409,11 @@ public class PairRddPractice {
 
         public void setScore(int score) {
             this.score = score;
+        }
+
+        @Override
+        public String toString() {
+            return super.toString();
         }
     }
 

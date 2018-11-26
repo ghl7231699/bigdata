@@ -23,9 +23,9 @@ public class JavaActionPractice {
         SparkConf conf = new SparkConf().setAppName(JavaActionPractice.class.getSimpleName()).setMaster("local");
         JavaSparkContext sc = new JavaSparkContext(conf);
         sc.setLogLevel("ERROR");
-//        JavaRDD<String> file = sc.textFile("in/student.csv");
-//        JavaRDD<String> file = sc.textFile("hdfs://aliyun:8020/user/input");
-        JavaRDD<String> file = sc.textFile("hdfs://aliyun:8020/user/test1/");
+        JavaRDD<String> file = sc.textFile("in/student.csv");
+//        JavaRDD<String> file = sc.textFile(Constants.hdfs_path() + "employee_all.csv");
+//        JavaRDD<String> file = sc.textFile("hdfs://47.104.236.112:8020/");
 
         count(file);
 //
@@ -46,7 +46,50 @@ public class JavaActionPractice {
         if (file == null) {
             return;
         }
+        System.out.println("count : \t" + file);
+//        file.map(new Function<String, String>() {
+//            @Override
+//            public String call(String v1) throws Exception {
+//                return v1;
+//            }
+//        }).foreach(new VoidFunction<String>() {
+//            @Override
+//            public void call(String s) throws Exception {
+//                System.out.println("count : \t" + s);
+//            }
+//        });
+//        JavaRDD<String> flatMap = file.flatMap(new FlatMapFunction<String, String>() {
+//            @Override
+//            public Iterator<String> call(String s) throws Exception {
+//                String[] split = s.split(" ");
+//                return Arrays.asList(split).iterator();
+//            }
+//        });
+//        flatMap.filter(new Function<String, Boolean>() {
+//            @Override
+//            public Boolean call(String v1) throws Exception {
+//                return v1.contains("a");
+//            }
+//        }).foreach(new VoidFunction<String>() {
+//            @Override
+//            public void call(String s) throws Exception {
+//                System.out.println("count : \t" + s);
+//            }
+//        });
+
         System.out.println("count : \t" + file.count());
+//        file.map(new Function<String, String>() {
+//            @Override
+//            public String call(String v1) throws Exception {
+//                return v1.split(",")[0];
+//            }
+//        }).foreach(new VoidFunction<String>() {
+//            @Override
+//            public void call(String s) throws Exception {
+//                System.out.println(s);
+//            }
+//        });
+
     }
 
     /**

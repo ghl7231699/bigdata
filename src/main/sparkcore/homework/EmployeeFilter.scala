@@ -34,8 +34,9 @@ object EmployeeFilter {
 
 
     val sc = new SparkContext(conf)
-    //    val employee = sc.textFile("in/test.csv")
-    val employee = sc.textFile(String.format(Constants.host, "/user/ghl/source/employee_all.csv"))
+    //        val employee = sc.textFile("in/employee_all.csv")
+    val employee = sc.textFile("in/employee.csv")
+    //    val employee = sc.textFile(String.format(Constants.host, "/user/ghl/source/employee_all.csv"))
 
     //要求1
     val value = employee.map(line => {
@@ -43,37 +44,39 @@ object EmployeeFilter {
       (lines(0), lines(1), lines(2), lines(3), lines(4), lines(5), lines(6), lines(7))
     }).groupBy(x => x._4)
 
-    value.map(y => {
-      y._2.toList
-        .sortBy(_._8)
-        .sortBy(_._1)
-    })
-      .collect()
-      .foreach(println)
+    value.foreach(println)
 
-    //要求2
-    val sorts = value.map(x => {
-      x._2.toList
-        .filter(z => {
-          !"".equals(z._8)
-        })
-        .map(f =>
-          (f._1, f._2, f._3, f._4, f._5, f._6, f._7, f._8.toFloat)
-        )
-        .sortBy(_._8)(Ordering.Float.reverse)
-        .take(3)
-        .map(y => {
-          (y._4, y._8, y._1)
-        })
-    })
+//    value.map(y => {
+//      y._2.toList
+//        .sortBy(_._8)
+//        .sortBy(_._1)
+//    })
+//      .collect()
+//      .foreach(println)
 
-    sorts
-      .collect()
-      .foreach(println)
-
-    sorts.foreachPartition(insert)
-
-    sc.stop()
+    //    //要求2
+    //    val sorts = value.map(x => {
+    //      x._2.toList
+    //        .filter(z => {
+    //          !"".equals(z._8)
+    //        })
+    //        .map(f =>
+    //          (f._1, f._2, f._3, f._4, f._5, f._6, f._7, f._8.toFloat)
+    //        )
+    //        .sortBy(_._8)(Ordering.Float.reverse)
+    //        .take(3)
+    //        .map(y => {
+    //          (y._4, y._8, y._1)
+    //        })
+    //    })
+    //
+    //    sorts
+    //      .collect()
+    //      .foreach(println)
+    //
+    //    sorts.foreachPartition(insert)
+    //
+    //    sc.stop()
 
   }
 
