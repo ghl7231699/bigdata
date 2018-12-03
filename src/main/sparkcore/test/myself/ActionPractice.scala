@@ -14,14 +14,16 @@ object ActionPractice {
     conf.setAppName("ActionPractice").setMaster("local")
 
     val sc = new SparkContext(conf)
-    val value = sc.textFile("in/国内航班数据500条.csv")
+    //    val value = sc.textFile("in/国内航班数据500条.csv")
+    val value = sc.textFile("hdfs://aliyun:8020/test/result.txt")
+
 
     println(value.partitions)
     println(value.partitions.size)
     println(value.partitioner)
 
 
-    //    count(value)
+    count(value)
     //
     //    take(value)
     //    first(value)

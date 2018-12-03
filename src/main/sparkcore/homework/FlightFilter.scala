@@ -22,8 +22,8 @@ object FlightFilter {
     conf.setMaster("local")
 
     val sc = new SparkContext(conf)
-    val flightRDD = sc.textFile("in/国内航班数据500条.csv")
-    //    val flightRDD = sc.textFile("hdfs://ghl01:8020/user/ghl/source/国内航班数据500条.csv")
+//    val flightRDD = sc.textFile("in/国内航班数据500条.csv")
+        val flightRDD = sc.textFile("hdfs://ghl01:8020/user/ghl/source/国内航班数据500条.csv")
 
     //获取航班数最多的前6位
     val value = flightRDD.map(line => {

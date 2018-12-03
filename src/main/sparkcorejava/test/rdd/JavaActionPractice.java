@@ -23,17 +23,17 @@ public class JavaActionPractice {
         SparkConf conf = new SparkConf().setAppName(JavaActionPractice.class.getSimpleName()).setMaster("local");
         JavaSparkContext sc = new JavaSparkContext(conf);
         sc.setLogLevel("ERROR");
-        JavaRDD<String> file = sc.textFile("in/student.csv");
+//        JavaRDD<String> file = sc.textFile("in/student.csv");
 //        JavaRDD<String> file = sc.textFile(Constants.hdfs_path() + "employee_all.csv");
-//        JavaRDD<String> file = sc.textFile("hdfs://47.104.236.112:8020/");
+        JavaRDD<String> file = sc.textFile("hdfs://aliyun:8020/test/student.csv");
 
-        count(file);
+//        count(file);
 //
 //        take(file);
 
 //        top(file);
 
-//        countByValue(file);
+        countByValue(file);
 
 //        reduce(file);
 

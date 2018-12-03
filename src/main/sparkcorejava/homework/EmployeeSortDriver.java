@@ -32,7 +32,9 @@ public class EmployeeSortDriver {
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("pattern").setMaster("local");
         JavaSparkContext sc = new JavaSparkContext(conf);
-        JavaRDD<String> rdd = sc.textFile("in/employee_all.csv");
+//        JavaRDD<String> rdd = sc.textFile("in/employee_all.csv");
+//        JavaRDD<String> rdd = sc.textFile("hdfs://ghl01:8020/user/ghl/source/employee_all.csv");
+        JavaRDD<String> rdd = sc.textFile("hdfs://aliyun:8020/test/employee_all.csv");
         sc.setLogLevel("ERROR");
 
         JavaPairRDD<EmployeeKey, EmployeeValue> pairRdd = rdd.mapToPair(new PairFunction<String, EmployeeKey, EmployeeValue>() {

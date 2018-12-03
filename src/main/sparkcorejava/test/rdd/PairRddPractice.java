@@ -29,14 +29,14 @@ public class PairRddPractice {
         JavaRDD<String> rdd = sc.textFile("in/student.csv");
 //        createPairRdd(rdd);
 //        normalToPairRdd(sc);
-//        reduceByKey(rdd);
+        reduceByKey(rdd);
 //        average(sc);
 //        combineByKey(sc);
-        averageScore(rdd);
+//        averageScore(rdd);
 
 //        join(sc);
 
-        sc.stop();
+//        sc.stop();
     }
 
     /**
@@ -198,12 +198,9 @@ public class PairRddPractice {
             public Boolean call(String v1) throws Exception {
                 return v1.contains("FIRE");
             }
-        }).mapToPair(new PairFunction<String, String, String>() {
-            @Override
-            public Tuple2<String, String> call(String s) throws Exception {
-                String[] split = s.split(",");
-                return new Tuple2<String, String>(split[0], split[3]);
-            }
+        }).mapToPair((PairFunction<String, String, String>) s -> {
+            String[] split = s.split(",");
+            return new Tuple2<>(split[0], split[3]);
         });
 
         JavaPairRDD<String, String> lieutenant = rdd1.filter(new Function<String, Boolean>() {
@@ -215,7 +212,7 @@ public class PairRddPractice {
             @Override
             public Tuple2<String, String> call(String s) throws Exception {
                 String[] split = s.split(",");
-                return new Tuple2<String, String>(split[0], split[2]);
+                return new Tuple2<>(split[0], split[2]);
             }
         });
 
