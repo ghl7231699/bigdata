@@ -7,5 +7,5 @@ spark-warehouse/
 src/main/resources/
 src/test/
 target
-src/main/sparksqljava/teacher/
+src/main/java/sparksqljava/teacher/
 /target/bigdata-1.0-jar-with-dependencies.jar
