@@ -23,7 +23,7 @@ object ActionPractice {
     println(value.partitioner)
 
 
-    count(value)
+    //    count(value)
     //
     //    take(value)
     //    first(value)
@@ -36,7 +36,7 @@ object ActionPractice {
     //
     //    reduce(sc)
     //
-    //    foreachFunction(value)
+    foreachFunction(value)
   }
 
   /**
@@ -45,7 +45,7 @@ object ActionPractice {
     * count()返回RDD中的元素数量
     * spark读取数据以行为单位进行的，即count为行数
     *
-    * @param rdd
+    * @param rdd Rdd
     */
   def count(rdd: RDD[String]): Unit = {
     val l = rdd.count()
@@ -172,16 +172,19 @@ object ActionPractice {
 
   def foreachFunction(rdd: RDD[String]): Unit = {
 
-    val list = new ArrayBuffer[String]()
-    rdd.foreach(x => {
-      list += x
-      if (list.size > 100) {
-        println(x)
-      }
-    })
+    //    val list = new ArrayBuffer[String]()
+    //    rdd.foreach(x => {
+    //      list += x
+    //      if (list.size > 100) {
+    //        println(x)
+    //      }
+    //    })
 
+    //// partiton.size 不能执行这个方法，否则下面的foreach方法里面会没有数据，
+    //因为iterator只能被执行一次
     val list1 = new ArrayBuffer[String]()
     rdd.foreachPartition(it => {
+      println(it.size)
       it.foreach(x => {
         list1 += x
         if (list1.size > 1000)

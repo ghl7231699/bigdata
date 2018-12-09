@@ -5,9 +5,8 @@ import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.PairFunction;
+import org.apache.spark.storage.StorageLevel;
 import scala.Tuple2;
-
-import java.util.List;
 
 /**
  * Spark 复杂的二次排序
@@ -49,13 +48,20 @@ public class EmployeeSortDriver {
         System.out.println(pairRdd);
         System.out.println("*************************");
 
-        pairRdd.cache();
-        //todo 优化：分区数的设置 会导致最终结果的差异性：分区数的设置应该根据文件动态设置
-        List<Tuple2<EmployeeKey, EmployeeValue>> collect = pairRdd.repartitionAndSortWithinPartitions(new CustomerPartitions(50))
-                .collect();
-        for (int i = 0; i < collect.size(); i++) {
-            Tuple2<EmployeeKey, EmployeeValue> tuple2 = collect.get(i);
-            System.out.println("result are :\t" + tuple2._1.getDepartment() + "\t" + tuple2._1.getSalary() + "\t" + tuple2._1.getName() + ":\t" + tuple2._2().getContent());
+
+        pairRdd.persist(StorageLevel.MEMORY_ONLY_SER());
+        pairRdd.count();
+        while (true) {
+
         }
+
+//        pairRdd.cache();
+//        //todo 优化：分区数的设置 会导致最终结果的差异性：分区数的设置应该根据文件动态设置
+//        List<Tuple2<EmployeeKey, EmployeeValue>> collect = pairRdd.repartitionAndSortWithinPartitions(new CustomerPartitions(50))
+//                .collect();
+//        for (int i = 0; i < collect.size(); i++) {
+//            Tuple2<EmployeeKey, EmployeeValue> tuple2 = collect.get(i);
+//            System.out.println("result are :\t" + tuple2._1.getDepartment() + "\t" + tuple2._1.getSalary() + "\t" + tuple2._1.getName() + ":\t" + tuple2._2().getContent());
+//        }
     }
 }
