@@ -1,0 +1,5 @@
+_id 邮编
+city 城市名称
+loc 经纬度
+pop 人口
+state 州

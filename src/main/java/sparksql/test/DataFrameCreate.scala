@@ -1,4 +1,4 @@
-package sparksql.utils
+package sparksql.test
 
 import java.sql.Date
 
@@ -7,13 +7,12 @@ import org.apache.spark.sql.{Row, SparkSession}
 
 /**
   * sparkSql
-  * 三种方式创建dataFrame
+  * 创建dataFrame
   *
   */
-object DataFramePractice {
+object DataFrameCreate {
 
   case class human(name: String, age: Int, city: String, date: Date)
-
 
   def main(args: Array[String]): Unit = {
     val builder = SparkSession.builder().appName("dataFrameTest").master("local").getOrCreate()
