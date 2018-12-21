@@ -4,8 +4,7 @@
 out
 .gitignore
 spark-warehouse/
-src/main/resources/
 src/test/
 target
-src/main/java/sparksqljava/teacher/
 /target/bigdata-1.0-jar-with-dependencies.jar
+metastore_db/tmp/

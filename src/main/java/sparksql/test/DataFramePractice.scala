@@ -32,7 +32,8 @@ object DataFramePractice {
 
     //    filterRow(ss, frame)
     //    union(ss, frame)
-    sort(ss, frame)
+    //    sort(ss, frame)
+    partition(ss, frame)
   }
 
   /**
@@ -207,8 +208,25 @@ object DataFramePractice {
     //    frame.orderBy(desc("count"), asc("DEST_COUNTRY_NAME")).show()
 
     //优化目的，有时建议在另一组转换之前对每个分区进行排序。您可以使用sortWithinPartitions方法来执行以下操作:
-    frame.sortWithinPartitions(expr("count desc")).show(30)
+    frame.sortWithinPartitions(expr("count")).limit(2).show()
   }
+
+  /**
+    * 分区操作
+    */
+  private def partition(ss: SparkSession, frame: DataFrame): Unit = {
+    val partitions = frame.rdd.getNumPartitions
+    System.out.println(partitions)
+    val value = frame.repartition(5)
+    System.out.println(value.rdd.getNumPartitions)
+
+    //如果经常对某个列进行过滤，那么基于该列进行重新分区是值得的
+    frame.repartition(col("DEST_COUNTRY_NAME"))
+    frame.repartition(5, col("DEST_COUNTRY_NAME"))
+
+    frame.repartition(5, col("DEST_COUNTRY_NAME")).coalesce(2)
+  }
+
 
 }
 
